@@ -1,0 +1,65 @@
+
+\documentclass[10pt,aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+\usetheme{Pittsburgh}
+\usecolortheme{default}
+\usepackage{comment}
+\usepackage{graphicx,booktabs,adjustbox,amsmath,array,tikz}
+\usepackage{appendixnumberbeamer, tcolorbox}
+\tcbuselibrary{skins}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usetikzlibrary{positioning,arrows.meta,decorations.pathmorphing}
+\definecolor{darkblue}{RGB}{29,78,137}
+\definecolor{softblue}{RGB}{227,238,249}
+\definecolor{darkgreen}{RGB}{45,120,75}
+\definecolor{softgreen}{RGB}{230,244,234}
+\definecolor{softorange}{RGB}{255,239,219}
+\beamertemplatenavigationsymbolsempty
+\addtobeamertemplate{navigation symbols}{}{\hspace{1em}\usebeamerfont{footline}\insertframenumber / \inserttotalframenumber}
+\graphicspath{{figs/}}
+\newtcbox{\inlinebox}[1][]{enhanced, box align=base, nobeforeafter, colback=cyan, colframe=Green, size=small, left=0pt, right=0pt, boxsep=2pt, #1}
+\definecolor{lightpink}{RGB}{255,230,240}
+\tikzset{photon/.style={decorate, decoration={snake,amplitude=1.4pt,segment length=6pt}}, >=Latex}
+\title[AD-ML]{Anomaly detection in multilepton final states}
+\subtitle{DNN Run-2 / Run-3 normalising-flow report for $4\ell\,2Z\,0b$}
+\author[D. Pietreanu, M. Rotaru]{Dorel~Pietreanu \and Marina~Rotaru}
+\date{\today}
+\newcommand{\Histo}[1]{\texttt{#1}}
+\AtBeginSection[]
+{
+ \begin{frame}
+    \frametitle{Table of Contents}
+    \begin{multicols}{4}
+        \tableofcontents[currentsection]   
+     \end{multicols}
+\end{frame}
+}
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+\logo{}
+
+
+
+\section{\texttt{Run2 DNN}}
+\include{slides_DNN_run2}
+
+\section{\texttt{Run3 DNN}}
+\include{slides_DNN_run3}
+
+\section{\texttt{Run2 LH}}
+\include{slides_LH_run2}
+
+\section{\texttt{Run3 LH}}
+\include{slides_LH_run3}
+
+
+\end{document}
